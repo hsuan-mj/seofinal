@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品詳情 - AURA 鞋履工坊</title>
+  <meta name="description" content="查看商品細節描述、製鞋材料、手工規格與相關推薦鞋款。">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header id="main-header"></header>
+
+  <!-- Product Detail Section -->
+  <section class="section-padding" style="padding-top: 40px;">
+    <div class="container">
+      
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" id="product-breadcrumb">
+        <a href="index.html">首頁</a> &gt; <span>探索鞋款</span>
+      </nav>
+
+      <!-- Detail Grid -->
+      <div class="product-detail-grid">
+        
+        <!-- Gallery (Left) -->
+        <div class="product-gallery">
+          <img src="assets/logo.png" id="prod-main-img" alt="Product Image">
+        </div>
+
+        <!-- Purchase Info (Right) -->
+        <div class="product-info-panel">
+          <h1 id="prod-title">載入中...</h1>
+          <p class="product-english-title" id="prod-eng-title">Loading...</p>
+          <div class="product-detail-price" id="prod-price">NT$ 0</div>
+          
+          <p class="product-detail-desc" id="prod-desc">商品細節說明加載中...</p>
+
+          <!-- Core Features -->
+          <div class="product-features-list">
+            <h3>核心特色</h3>
+            <ul id="prod-features">
+              <!-- Rendered dynamically -->
+            </ul>
+          </div>
+
+          <!-- Selection Form -->
+          <form id="buy-form">
+            <!-- Colors -->
+            <div class="option-group">
+              <span class="option-title">選擇顏色</span>
+              <div class="colors-container" id="prod-colors">
+                <!-- Rendered dynamically -->
+              </div>
+            </div>
+
+            <!-- Sizes & Qty -->
+            <div style="display: flex; gap: 24px; margin-bottom: 30px; flex-wrap: wrap;">
+              <div class="option-group" style="margin-bottom: 0;">
+                <label class="option-title" for="prod-size-select">選擇尺寸 (EUR)</label>
+                <select id="prod-size-select" class="prod-select-control" required>
+                  <!-- Rendered dynamically -->
+                </select>
+              </div>
+
+              <div class="option-group" style="margin-bottom: 0;">
+                <span class="option-title">購買數量</span>
+                <div class="qty-selector">
+                  <button type="button" onclick="adjustQty(-1)">-</button>
+                  <input type="text" id="prod-qty" value="1" readonly>
+                  <button type="button" onclick="adjustQty(1)">+</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="purchase-actions">
+              <button type="submit" class="btn btn-primary" style="flex-grow: 1;">加入購物車</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Specifications Section -->
+      <div class="specs-container section-padding" style="padding-top: 0; padding-bottom: 40px;">
+        <h3>詳細規格</h3>
+        <table class="specs-table">
+          <tbody id="prod-specs">
+            <!-- Rendered dynamically -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Related Products Grid -->
+      <div class="section-padding" style="border-top: 1px solid var(--color-border); padding-bottom: 0;">
+        <div class="section-header" style="text-align: left; margin-bottom: 32px;">
+          <h2>您可能也會喜歡</h2>
+        </div>
+        <div class="products-grid" id="related-products-grid">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer id="main-footer"></footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

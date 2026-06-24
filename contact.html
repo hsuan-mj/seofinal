@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>聯絡我們 - AURA 鞋履工坊</title>
+  <meta name="description" content="聯絡 AURA 客服團隊，或查詢我們台北大安旗艦店的門市地址、營業時間與聯絡電話。">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header id="main-header"></header>
+
+  <!-- Category Title Banner -->
+  <section class="category-hero">
+    <div class="container">
+      <h1>聯絡我們</h1>
+      <p>不論是售後諮詢、門市體驗預約或是商業合作，我們隨時傾聽您的聲音。</p>
+    </div>
+  </section>
+
+  <!-- Contact Us Grid -->
+  <section class="section-padding">
+    <div class="container contact-grid">
+      
+      <!-- Info Panel -->
+      <div class="contact-info-panel">
+        <h2>大安旗艦美學店</h2>
+        <p style="color: #a0a0a0; margin-bottom: 30px; font-size: 0.95rem;">歡迎親臨門市體驗專屬的「一對一足型測量」與「手工鞋訂製」服務，我們備有精緻茶點與專業諮詢顧問。</p>
+        
+        <div class="contact-info-item">
+          <div class="contact-info-text">
+            <h3>門市地址</h3>
+            <p>台北市大安區忠孝東路四段 100 號 1 樓</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-text">
+            <h3>聯絡電話</h3>
+            <p>(02) 2771-8888</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-text">
+            <h3>電子郵件</h3>
+            <p>service@aurashoes.com.tw</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-text">
+            <h3>營業時間</h3>
+            <p>週一至週日 11:30 - 21:30</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Panel -->
+      <div class="contact-form-panel">
+        <h2>發送聯絡訊息</h2>
+        <form onsubmit="event.preventDefault(); alert('感謝您的聯絡！我們已收到您的訊息，客服專員將於 24 小時內與您聯繫。'); this.reset();">
+          <div class="form-group">
+            <label class="form-label" for="contact-name">您的姓名 *</label>
+            <input type="text" id="contact-name" class="form-control" placeholder="請輸入姓名" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-email">電子郵件 *</label>
+            <input type="email" id="contact-email" class="form-control" placeholder="example@email.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-phone">聯絡電話</label>
+            <input type="tel" id="contact-phone" class="form-control" placeholder="請輸入電話號碼">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-subject">諮詢主旨 *</label>
+            <select id="contact-subject" class="form-control" required>
+              <option value="">請選擇諮詢項目</option>
+              <option value="1">尺碼與商品庫存諮詢</option>
+              <option value="2">訂單與退換貨事宜</option>
+              <option value="3">大安旗艦店預約量腳</option>
+              <option value="4">商業合作提案</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-message">諮詢內容 *</label>
+            <textarea id="contact-message" class="form-control" rows="5" placeholder="請詳細輸入您的問題，以便我們快速為您解答。" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-block btn-primary">送出諮詢訊息</button>
+        </form>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer id="main-footer"></footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
