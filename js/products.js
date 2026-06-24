@@ -188,6 +188,8 @@ const PRODUCTS = [
     category: "heels",
     categoryName: "高跟鞋",
     image: "assets/heels_1.png",
+    title: "奢華漆皮尖頭高跟鞋",
+    alt: "奢華漆皮尖頭高跟鞋",
     description: "經典8公分細高跟，採用極致亮麗的進口漆皮，流暢的楦頭曲線完美修飾雙腳，散發無可挑剔的優雅性感。",
     features: ["奢華進口亮面漆皮", "8cm性感優雅細高跟", "高密度足弓支撐墊", "防滑超薄耐磨橡膠底"],
     sizes: [34, 35, 36, 37, 38, 39, 40],
