@@ -72,7 +72,7 @@ function updateCartUI() {
 
   const drawerItems = document.getElementById("cart-drawer-items");
   const drawerSubtotal = document.getElementById("cart-drawer-subtotal");
-  
+
   if (drawerItems) {
     if (cart.length === 0) {
       drawerItems.innerHTML = `
@@ -90,7 +90,7 @@ function updateCartUI() {
         subtotal += itemTotal;
         html += `
           <div class="cart-item">
-            <img src="${item.image}" alt="${item.name}">
+            <img src="${item.image}" title="${item.name}" alt="${item.name}">
             <div class="cart-item-info">
               <h4>${item.name}</h4>
               <p class="cart-item-meta">尺寸: ${item.size} | 顏色: ${item.color}</p>
@@ -338,7 +338,7 @@ function setupGlobalEvents() {
   // Handle active class highlight
   const path = window.location.pathname;
   const page = path.split("/").pop();
-  
+
   if (page === "" || page === "index.html") {
     const activeLink = document.getElementById("nav-home");
     if (activeLink) activeLink.classList.add("active");
@@ -392,7 +392,7 @@ function renderCategoryProducts(category) {
   if (!grid) return;
 
   const list = PRODUCTS.filter(p => p.category === category);
-  
+
   if (countEl) {
     countEl.innerText = list.length;
   }
@@ -410,7 +410,7 @@ function renderProductCardHTML(product) {
   return `
     <div class="product-card">
       <div class="product-card-img">
-        <img src="${product.image}" alt="${product.name}" loading="lazy">
+        <img src="${product.image}" title="${product.name}" alt="${product.name}" loading="lazy">
         <div class="product-card-overlay">
           <a href="product.html?id=${product.id}" class="btn btn-secondary btn-sm">查看詳情</a>
           <button onclick="quickAdd('${product.id}')" class="btn btn-primary btn-sm">快速加入</button>
@@ -429,7 +429,7 @@ function renderProductCardHTML(product) {
 }
 
 // Quick Add helper (uses first size and color)
-window.quickAdd = function(productId) {
+window.quickAdd = function (productId) {
   const product = PRODUCTS.find(p => p.id === productId);
   if (!product) return;
   const size = product.sizes[0];
@@ -441,9 +441,9 @@ window.quickAdd = function(productId) {
 function renderProductDetails() {
   const urlParams = new URLSearchParams(window.location.search);
   const productId = urlParams.get("id");
-  
+
   const product = PRODUCTS.find(p => p.id === productId) || PRODUCTS[0]; // fallback to first
-  
+
   if (!product) return;
 
   // Breadcrumb
@@ -461,10 +461,11 @@ function renderProductDetails() {
   document.getElementById("prod-eng-title").innerText = product.englishName;
   document.getElementById("prod-price").innerText = `NT$ ${product.price.toLocaleString()}`;
   document.getElementById("prod-desc").innerText = product.description;
-  
+
   const mainImg = document.getElementById("prod-main-img");
   if (mainImg) {
     mainImg.src = product.image;
+    mainImg.title = product.name;
     mainImg.alt = product.name;
   }
 
@@ -511,7 +512,7 @@ function renderProductDetails() {
       const checkedColorEl = document.querySelector('input[name="prod-color"]:checked');
       const selectedColor = checkedColorEl ? checkedColorEl.value : "預設";
       const quantity = parseInt(document.getElementById("prod-qty").value) || 1;
-      
+
       addToCart(product.id, selectedSize, selectedColor, quantity);
     });
   }
@@ -526,7 +527,7 @@ function renderRelatedProducts(currentProduct) {
 
   // Filter products in the same category, excluding current product
   let related = PRODUCTS.filter(p => p.category === currentProduct.category && p.id !== currentProduct.id);
-  
+
   // If not enough related items, fill with others
   if (related.length < 4) {
     const extra = PRODUCTS.filter(p => p.id !== currentProduct.id && !related.includes(p)).slice(0, 4 - related.length);
@@ -540,7 +541,7 @@ function renderRelatedProducts(currentProduct) {
 }
 
 // Quantity Counter actions in details page
-window.adjustQty = function(delta) {
+window.adjustQty = function (delta) {
   const qtyEl = document.getElementById("prod-qty");
   if (!qtyEl) return;
   let val = parseInt(qtyEl.value) || 1;
